@@ -6,7 +6,7 @@ export default class PreloadScene extends Phaser.Scene {
   preload() {
     this.load.image('cat', 'assets/cats/basic_cat.png')
     this.load.image('enemy', 'assets/enemies/basic_dog_enemy.png')
-    this.load.image('background', 'assets/bg/expended_bg.png')
+    this.load.image('background', 'assets/bg/bg.png')
   }
 
   create() {
