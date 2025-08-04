@@ -32,7 +32,11 @@ export default class GameScene extends Phaser.Scene {
       const slot = this.add.rectangle(160 + i * 180, slotY, 150, 80, 0xffffff)
         .setScrollFactor(0)
         .setInteractive()
-        .on('pointerdown', () => this.enterPlacementMode(i))
+        .on('pointerdown', (pointer, localX, localY, event) => {
+          this.enterPlacementMode(i)
+          event.stopPropagation() // 이벤트 전파 중단
+        })
+        
 
       const label = this.add.text(slot.x - 20, slot.y - 10, `Cat ${i + 1}`, {
         fontSize: '20px',
@@ -94,3 +98,4 @@ export default class GameScene extends Phaser.Scene {
     })
   }
 }
+

@@ -1,8 +1,10 @@
 {
-  "name": "nekodefense",
+  "name": "sikbbang-cat-defense",
   "version": "1.0.0",
   "scripts": {
-    "start": "vite"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
     "phaser": "^3.60.0"
