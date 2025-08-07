@@ -24,17 +24,17 @@ export default class GameScene extends Phaser.Scene {
     this.enemies = []
 
     // 📌 UI 슬롯 하단 고정
-    this.ui = this.add.container(0, 0)
+    this.container1 = this.add.container(0, 0)// UI 컨테이너 생성
     this.slots = []
     const slotY = screenHeight - 50
 
     for (let i = 0; i < 3; i++) {
       const slot = this.add.rectangle(160 + i * 180, slotY, 150, 80, 0xffffff)
-        .setScrollFactor(0)
-        .setInteractive()
+        .setScrollFactor(0) // 스크롤에 영향을 받지 않도록 설정
+        .setInteractive() // 클릭 가능하도록 설정
         .on('pointerdown', (pointer, localX, localY, event) => {
-          this.enterPlacementMode(i)
-          event.stopPropagation() // 이벤트 전파 중단
+          this.enterPlacementMode(i) // 배치 모드 진입
+          event.stopPropagation() // 이벤트 전파 중단(클릭 시 다른 이벤트 발생 방지)
         })
         
 
