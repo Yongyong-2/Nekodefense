@@ -50,17 +50,17 @@ export default class GameScene extends Phaser.Scene {
 
     // 🟩 배치 가능한 셀 정의 (3행 4열 예시)
     this.placementGrid = [
-      [ { x: 300, y: 200 }, { x: 500, y: 200 }, { x: 700, y: 200 }, { x: 900, y: 200 } ],
-      [ { x: 300, y: 400 }, { x: 500, y: 400 }, { x: 700, y: 400 }, { x: 900, y: 400 } ],
-      [ { x: 300, y: 600 }, { x: 500, y: 600 }, { x: 700, y: 600 }, { x: 900, y: 600 } ]
+      [ { x: 900, y: 400 }, { x: 600, y: 400 }, { x: 700, y: 400 }, { x: 800, y: 400 } ],
+      [ { x: 900, y: 500 }, { x: 600, y: 500 }, { x: 700, y: 500 }, { x: 800, y: 500 } ],
+      [ { x: 900, y: 300 }, { x: 600, y: 300 }, { x: 700, y: 300 }, { x: 800, y: 300 } ]
     ]
 
     // 🟥 셀 시각화용 박스 생성
     this.placementZoneRects = []
     for (let row of this.placementGrid) {
       for (let cell of row) {
-        const rect = this.add.rectangle(cell.x, cell.y, 100, 100, 0x00ff00, 0.2)
-          .setStrokeStyle(2, 0x00ff00)
+        const rect = this.add.rectangle(cell.x, cell.y, 100, 100, 0xffffff, 0.2)
+          .setStrokeStyle(2, 0xffffff)
           .setVisible(false)
         this.placementZoneRects.push(rect)
       }
